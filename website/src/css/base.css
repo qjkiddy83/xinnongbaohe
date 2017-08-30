@@ -1,0 +1,5 @@
+$width:1000px;
+.wapper{
+	width: $width;
+	margin: 0 auto;
+}
