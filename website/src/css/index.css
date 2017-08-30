@@ -1,20 +1,105 @@
 @import './reset.css';
 @import './base.css';
+@import './swiper.css';
 
-@mixin bg($img,$left:center,$top:top){
-    background:url($img) no-repeat;
+$bcolor:#4a81ff;
+
+@mixin bg($img, $left:center, $top:top) {
+    background: url($img) no-repeat;
     background-size: 100%;
     @if $left {
         background-position: $left $top;
     }
 }
 
-@mixin bgcolor($color){
-    background-color:$color;
+@mixin bgcolor($color) {
+    background-color: $color;
 }
 
-body{
-    @include bgcolor(#f00);
+body {
+    /*@include bgcolor(#f00);*/
     /*color: #fff;*/
 }
 
+.swiper-pagination-bullet {
+    background: url(../images/bullet.png) no-repeat right center;
+    background-size: 36px 14px;
+    width: 11px;
+    height: 11px;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-position: left center;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 6px;
+}
+
+.block-title {
+    margin: 67px 0 45px 0;
+    line-height: 78px;
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+}
+
+.block-title:after {
+    display: block;
+    content: ' ';
+    width: 102px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: $bcolor;
+    margin: 0 auto;
+}
+
+.strengths {
+    & ul {
+        overflow: hidden;
+        & li {
+            width: 235px;
+            float: left;
+            margin: 0 (1000-235*4)/3 +px 20px 0;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+            font-size: 16px;
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+            & a {
+                display: block;
+                color: #333;
+                & img {
+                    display: block;
+                }
+                & p {
+                    text-align: center;
+                    height: 56px;
+                    line-height: 50px;
+                }
+                &:hover {
+                    color: $bcolor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.mobile-step {
+    & img {
+        width: 932px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.buy-step {
+    & img {
+        display: block;
+        width: 1736/2+px;
+        margin: 0 auto;
+    }
+}

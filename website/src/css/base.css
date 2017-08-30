@@ -1,5 +1,146 @@
 $width:1000px;
-.wapper{
-	width: $width;
-	margin: 0 auto;
+$bcolor:#4a81ff;
+
+.wrapper {
+    width: $width;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 10px;
+    height: 50px;
+    border-bottom: 1px solid #f2f2f2;
+    & .logo {
+        float: left;
+    }
+    & .nav {
+        float: right;
+        text-align: right;
+        & li {
+            display: inline-block;
+            margin-left: 30px;
+            & a {
+                color: #000;
+                line-height: 32px;
+                text-decoration: none;
+            }
+        }
+        & li.cur a,
+        li a:hover {
+            color: $bcolor;
+        }
+    }
+}
+
+.footer {
+    text-align: center;
+    margin-top: 100px;
+    border-top: 1px solid #e4e4e4;
+    & ul {
+        padding: 35px 0 20px 0;
+        & li {
+            display: inline-block;
+            padding: 0 20px;
+            border-right: 1px solid #e4e4e4;
+            line-height: 17px;
+            & a {
+                color: #777;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+    & p a {
+        display: inline-block;
+        color: #777;
+        margin: 0 5px;
+    }
+}
+.login-layer{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	z-index: 10;
+	& .cont{
+		background-color: #fff;
+		width:372px;
+		height: 392px;
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -196px 0 0 -186px;
+		border-radius: 5px;
+		padding: 34px;
+		box-sizing: border-box;
+		& .close{
+			position: absolute;
+			right: 15px;
+			top: 15px;
+			background:url(../images/btn-close.png) no-repeat;
+			background-size: cover;
+			width: 13px;
+			height: 13px;
+		}
+		& h3{
+			font-size: 22px;
+			text-align: center;
+			font-weight: normal;
+			line-height: 30px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #eee;
+			color: #333;
+			margin-bottom: 25px;
+		}
+		& input{
+			display: block;
+			height: 43px;
+			line-height: 43px;
+			width: 100%;
+			outline: none;
+			border:1px solid #dddddd;
+			background-color: #f4f4f4;
+			margin-bottom: 15px;
+			padding: 0 15px;
+			box-sizing: border-box;
+			border-radius: 5px;
+			font-size: 14px;
+			line-height: 14px;
+			&:focus,&:hover{
+				background-color:#fff;
+				border-color: #49a0ff;
+			}
+			&[type="password"]{
+				margin-bottom: 0;
+			}
+			&[type="submit"]{
+				background-color: #2b79ff;
+				border-color: #2b79ff;
+				color: #eee;
+			}
+		}
+		& .tip{
+			color: #ff0f17;
+			text-align: center;
+			height: 33px;
+			& span{
+				line-height: 33px;
+			}
+		}
+		& .msg{
+			position: absolute;
+			bottom: 34px;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			color: #999999;
+			& a{
+				color: #2b79ff;
+			}
+		}
+	}
 }
