@@ -1,4 +1,4 @@
-console.log(process.argv,process.env);
+// console.log(process.argv,process.env);
 var webpack = require('webpack'),
     path = require('path'),
     fs = require('fs'),
