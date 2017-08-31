@@ -1,15 +1,29 @@
-$width:1000px;
-$bcolor:#4a81ff;
+@import './vars';
 
+a:hover{
+	text-decoration: none;
+	color: $bcolor!important;
+}
+.mt100{
+	margin-top: 100px;
+}
+.color-1{
+	background-color: #f8f9fa;
+}
 .wrapper {
     width: $width;
     margin: 0 auto;
+}
+.wrapper-100{
+	width: 100%;
+	position: relative;
 }
 
 .header {
     padding-top: 10px;
     height: 50px;
     border-bottom: 1px solid #f2f2f2;
+    background-color: #fff;
     & .logo {
         float: left;
     }
@@ -34,8 +48,8 @@ $bcolor:#4a81ff;
 
 .footer {
     text-align: center;
-    margin-top: 100px;
     border-top: 1px solid #e4e4e4;
+    background-color: #fff;
     & ul {
         padding: 35px 0 20px 0;
         & li {
@@ -141,6 +155,33 @@ $bcolor:#4a81ff;
 			& a{
 				color: #2b79ff;
 			}
+		}
+	}
+}
+
+.paging{
+	height: 20px;
+	text-align: center;
+	padding: 15px 0 25px;
+	& *{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 3px;
+	}
+	& em{
+		color: $bcolor;
+	}
+	& a{
+		background:url(../images/page.png) no-repeat;
+		width: 20px;
+		height: 20px;
+		background-size: auto 45px;
+
+		&.next{
+			background-position: top right;
+		}
+		&:hover{
+			background-position-y:bottom;
 		}
 	}
 }

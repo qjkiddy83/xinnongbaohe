@@ -1,0 +1,32 @@
+@import './list';
+.content{
+	& .detail{
+		float: right;
+		width: 756px;
+		background-color: #fff;
+		padding: 20px 22px;
+		box-sizing: border-box;
+		margin-bottom: 30px;
+		& h1{
+			text-align: center;
+			color: #2e3254;
+			font-size:30px;
+			margin:20px auto 30px;
+			font-weight: normal;
+		}
+		& h3{
+			font-weight: normal;
+			font-size: 16px;
+			margin: 30px auto 15px;
+			text-indent: 16px;
+		}
+		& img{
+			display: block;
+		}
+		& p{
+			line-height: 29px;
+			color: #333;
+			text-align: justify;
+		}
+	}
+}

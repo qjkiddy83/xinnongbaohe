@@ -1,0 +1,64 @@
+@import './vars';
+
+.banner{
+	padding: 20px 0;
+	& img{
+		display: block;
+	}
+}
+.content{
+	overflow: hidden;
+	& .menu{
+		float: left;
+		width: 220px;
+		background-color: #fff;
+		box-sizing: border-box;
+		border-radius: 5px;
+		padding-bottom: 45px; 
+		& h3{
+			height: 40px;
+			line-height: 40px;
+			font-size: 16px;
+			font-weight: normal;
+			background-color: $bcolor1;
+			padding: 0 0 0 20px;
+			color: #fff;
+			border-radius: 5px 5px 0 0;
+		}
+		& li{
+			padding: 20px 0 0 20px;
+			list-style: inside;
+			& a{
+				color: #333;
+			}
+		}
+	}
+	& .list{
+		float: right;
+		width: 756px;
+		& ul{
+			background-color: #fff;
+			padding: 20px 22px;
+			box-sizing: border-box;
+		}
+		& li{
+			font-size: 14px;
+			line-height: 22px;
+			margin: 0 0 24px 0;
+			position: relative;
+			& a{
+				color: #333;
+				padding-left: 36px; 
+				box-sizing: border-box;
+				& i{
+					position: absolute;
+					left: 0;
+				}
+				& p{
+					display: inline-block;
+					width: 756 - 44 - 36 +px;
+				}
+			}
+		}
+	}
+}

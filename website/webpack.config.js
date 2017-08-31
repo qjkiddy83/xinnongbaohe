@@ -1,10 +1,10 @@
 var webpack = require('webpack'),
     path = require('path'),
     fs = require('fs'),
-    os = require('os'),
+    pkg = require('./package.json'),
     merge = require('merge'),
     isDev = process.env.npm_lifecycle_event === "start",
-    copyfiles = require('./copyfiles.js'),
+    // copyfiles = require('./copyfiles.js'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     _chunks = [],
@@ -29,7 +29,7 @@ var webpack = require('webpack'),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'global', // 将公共模块提取，生成名为`global`的chunk
             chunks: _chunks, //提取哪些模块共有的部分
-            minChunks: _chunks.length // 提取至少2个模块共有的部分
+            minChunks: Infinity // 提取至少2个模块共有的部分
         }),
         new ExtractTextPlugin({ filename: '[name].css' }),
     ];
@@ -43,7 +43,7 @@ function getOEntry() {
         aHtmlWebpackPlugin = [],
         files = fs.readdirSync(routerPath); //遍历router文件夹的文件
 
-    files.forEach(function(item) {
+    files.forEach(function (item) {
         var tmp = item.split('.');
         if (tmp[1] !== 'js') {
             return;
@@ -52,11 +52,15 @@ function getOEntry() {
         oEntry[tmp[0]] = [
             [routerPath, item].join('')
         ];
+        if (tmp[0] === "global") {
+            return;
+        }
         var fileSrc = tmp[0] + '.html';
         aHtmlWebpackPlugin.push(new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'templates', fileSrc),
             filename: fileSrc,
-            chunks: ['global', tmp[0]]
+            chunks: ["global", tmp[0]],
+            minify: false
         }));
     });
 
@@ -114,10 +118,10 @@ function getRules() {
         query: {
             limit: 8192,
             name: 'images/[hash:8].[name].[ext]'
-        }　　　
+        }
     }, {
         test: /\.(htm|html)$/i,
-        loader: 'html-withimg-loader'
+        loader: 'html-withimg-loader?min=false'
     }];
     return isDev ? [cfg_eslint, ...rules] : rules;
 }

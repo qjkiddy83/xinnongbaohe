@@ -1,25 +1,5 @@
-@import './reset.css';
-@import './base.css';
+@import './vars';
 @import './swiper.css';
-
-$bcolor:#4a81ff;
-
-@mixin bg($img, $left:center, $top:top) {
-    background: url($img) no-repeat;
-    background-size: 100%;
-    @if $left {
-        background-position: $left $top;
-    }
-}
-
-@mixin bgcolor($color) {
-    background-color: $color;
-}
-
-body {
-    /*@include bgcolor(#f00);*/
-    /*color: #fff;*/
-}
 
 .swiper-pagination-bullet {
     background: url(../images/bullet.png) no-repeat right center;
@@ -78,10 +58,6 @@ body {
                     text-align: center;
                     height: 56px;
                     line-height: 50px;
-                }
-                &:hover {
-                    color: $bcolor;
-                    text-decoration: none;
                 }
             }
         }
