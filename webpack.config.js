@@ -1,10 +1,10 @@
+console.log(process.argv,process.env);
 var webpack = require('webpack'),
     path = require('path'),
     fs = require('fs'),
     pkg = require('./package.json'),
     merge = require('merge'),
     isDev = process.env.npm_lifecycle_event === "start",
-    // copyfiles = require('./copyfiles.js'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     _chunks = [],
@@ -18,7 +18,7 @@ var webpack = require('webpack'),
     _exports = { //基础配置
         entry: oConfig.oEntry,
         output: {
-            path: path.join(__dirname, 'dist'),
+            path: path.join(__dirname, 'website', 'dist'),
             filename: 'js/[name].js'
         },
         module: {
@@ -36,14 +36,14 @@ var webpack = require('webpack'),
 
 //生成入口对象
 function getOEntry() {
-    var routerPath = './src/router/',
+    var routerPath = './website/src/router/',
         oEntry = {
 
         },
         aHtmlWebpackPlugin = [],
         files = fs.readdirSync(routerPath); //遍历router文件夹的文件
 
-    files.forEach(function (item) {
+    files.forEach(function(item) {
         var tmp = item.split('.');
         if (tmp[1] !== 'js') {
             return;
@@ -57,7 +57,7 @@ function getOEntry() {
         }
         var fileSrc = tmp[0] + '.html';
         aHtmlWebpackPlugin.push(new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'templates', fileSrc),
+            template: path.join(__dirname, 'website','src', 'templates', fileSrc),
             filename: fileSrc,
             chunks: ["global", tmp[0]],
             minify: false
@@ -127,8 +127,3 @@ function getRules() {
 }
 
 module.exports = getExports()
-
-// copyfiles("src/static/", "dist/static/")
-// copyfiles("\.html$", "dist/", function(data) {
-//     return data.replace(/dist\//g, '');
-// })
