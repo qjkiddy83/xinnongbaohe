@@ -11,7 +11,7 @@ free.stdout.on('data', function(data) {
     console.log(data.toString());
 });
 free.stderr.on('data', function(data) {
-    console.log(data.toString());
+    console.error(data.toString());
 });
 free.on('exit', function(code, signal) {
     console.log(code.toString());

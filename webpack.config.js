@@ -19,7 +19,7 @@ var webpack = require('webpack'),
         entry: oConfig.oEntry,
         output: {
             path: path.join(__dirname, webroot, 'dist'),
-            filename: 'js/[name].js'
+            filename: '[name].js'
         },
         module: {
             rules: getRules()
@@ -31,7 +31,7 @@ var webpack = require('webpack'),
             chunks: _chunks, //提取哪些模块共有的部分
             minChunks: Infinity // 提取至少2个模块共有的部分
         }),
-        new ExtractTextPlugin({ filename: 'css/[name].css' }),
+        new ExtractTextPlugin({ filename: '[name].css' }),
     ];
 
 //生成入口对象

@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./start.js",
-    "dev":"webpack-dev-server --config webpack.config.js --color --watch --hot --progress",
-    "build": "webpack --config webpack.config.js --color -p --progress",
-    "clean": "rimraf ./**/dist/*",
+    "dev": "webpack-dev-server --config webpack.config.js --color --watch --hot --progress",
+    "ant": "node ./build.js",
+    "build": "webpack --config webpack.config.js",
+    "clean": "rimraf ./*/dist/*",
     "prebuild": "npm run clean"
   },
   "author": "",

@@ -1,11 +1,82 @@
 @import './vars';
+html,body{
+	position: relative;
+	height: 100%;
+}
+
+a:hover{
+	text-decoration: none;
+}
 
 .wrapper {
     width: $width;
     margin: 0 auto;
 }
-.wrapper-100{
-	width: 100%;
-	position: relative;
+
+.wrapper-100 {
+    width: 100%;
+    position: relative;
 }
 
+.icons {
+    background: url(../images/icons.png) no-repeat;
+    background-size: $ico-bg-w/2 $ico-bg-h/2;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    &.ico-nav-2{
+    	background-position: 0 -40px; 
+    }
+}
+
+.h100{
+	height: 100%;
+}
+
+.nav{
+	background: #247ed0;
+	width: 100px;
+	float: left;
+	height: 100%;
+	& .logo{
+		height: 103px;
+		text-align: center;
+		color: #fff;
+		font-size: 12px;
+		img{
+			display: block;
+			margin: 25px auto 12px;
+		}
+	}
+	& li{
+		text-align: center;
+		box-sizing: border-box;
+		& .icons{
+			display: block;
+			margin: 0 auto 10px;
+		}
+		& a{
+			display: block;
+			height: 87px;
+			box-sizing: border-box;
+			padding-top: 16px;
+			color: #fff;
+			font-size: 14px;
+			border-left: 3px solid transparent;
+			&:hover{
+				background-color:#146fc2;
+				border-left: 3px solid #004176;
+			}
+		}
+		&.cur a{
+			background-color:#146fc2;
+			border-left: 3px solid #004176;
+		}
+	}
+}
+.main{
+	float: right;
+	width: 924px;
+	background-color: #f3f3f3;
+	height: 100%;
+}
