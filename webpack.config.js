@@ -1,8 +1,8 @@
-// console.log(process.argv,process.env);
 var webpack = require('webpack'),
     path = require('path'),
     fs = require('fs'),
     pkg = require('./package.json'),
+    webroot = process.env.WEBROOT,
     merge = require('merge'),
     isDev = process.env.npm_lifecycle_event === "start",
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
@@ -18,7 +18,7 @@ var webpack = require('webpack'),
     _exports = { //基础配置
         entry: oConfig.oEntry,
         output: {
-            path: path.join(__dirname, 'website', 'dist'),
+            path: path.join(__dirname, webroot, 'dist'),
             filename: 'js/[name].js'
         },
         module: {
@@ -36,7 +36,7 @@ var webpack = require('webpack'),
 
 //生成入口对象
 function getOEntry() {
-    var routerPath = './website/src/router/',
+    var routerPath = './' + webroot + '/src/router/',
         oEntry = {
 
         },
@@ -57,7 +57,7 @@ function getOEntry() {
         }
         var fileSrc = tmp[0] + '.html';
         aHtmlWebpackPlugin.push(new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'website','src', 'templates', fileSrc),
+            template: path.join(__dirname, webroot, 'src', 'templates', fileSrc),
             filename: fileSrc,
             chunks: ["global", tmp[0]],
             minify: false

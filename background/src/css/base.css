@@ -1,0 +1,11 @@
+@import './vars';
+
+.wrapper {
+    width: $width;
+    margin: 0 auto;
+}
+.wrapper-100{
+	width: 100%;
+	position: relative;
+}
+
