@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "echarts": "^3.7.1",
     "merge": "^1.2.0"
   }
 }
