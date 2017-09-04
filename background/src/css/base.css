@@ -428,9 +428,11 @@ a:hover{
 			}
 			& .ul4{
 				overflow: hidden;
+				display: flex;
+				flex-wrap: wrap;
 				& li{
-					width: 268px;
-					margin:0 (846 - 268*3)/2+px 7px 0;
+					width: 32%;
+					margin:0 2% 7px 0;
 					float: left;
 					&:nth-child(3n){
 						margin-right: 0;
@@ -443,6 +445,18 @@ a:hover{
 							color: #727a93;
 							font-size: 12px;
 							margin-left: 10px;
+						}
+					}
+				}
+				@media screen and (min-width: 1400px){
+					& li{
+						width: 23.5%;
+						margin:0 2% 7px 0;
+						&:nth-child(3n){
+							margin-right: 2%;
+						}
+						&:nth-child(4n){
+							margin-right: 0;
 						}
 					}
 				}

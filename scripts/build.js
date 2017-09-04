@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-let {spawn,exec} = require('child_process');
+let { spawn, exec } = require('child_process');
+let root = './' + process.env.WEBROOT + '/dist';
+let free = exec('npm run ant');
 
 process.env.WEBROOT = process.argv.pop();
 
-exec('rm -rf ./'+process.env.WEBROOT+'/dist');
-
-var free = exec('npm run ant');
+exec('rm -rf ' + root);//清除原打包文件夹
 
 free.stdout.on('data', function(data) {
     console.log(data.toString());
@@ -15,5 +15,21 @@ free.stderr.on('data', function(data) {
     console.error(data.toString());
 });
 free.on('exit', function(code, signal) {
-    console.log(code.toString());
+    replaceHtml()
 });
+
+//替换html引用图片目录地址
+function replaceHtml() {
+    var fs = require("fs");
+    var path = require('path');
+    fs.readdir(root, function(code, ls) {
+        ls.forEach(function(item) {
+            if (/\.html$/.test(item)) {
+                var data = fs.readFileSync(path.join(root, item), "utf-8");
+                fs.writeFile(path.join(root, item), data.replace(/\.\.\/images\//g, 'images/'), (err) => {
+                    if (err) throw err;
+                });
+            }
+        })
+    });
+}
