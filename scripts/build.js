@@ -4,8 +4,9 @@ let {spawn,exec} = require('child_process');
 
 process.env.WEBROOT = process.argv.pop();
 
+exec('rm -rf ./'+process.env.WEBROOT+'/dist');
 
-var free = exec('npm run build');
+var free = exec('npm run ant');
 
 free.stdout.on('data', function(data) {
     console.log(data.toString());

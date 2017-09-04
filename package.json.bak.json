@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./scripts/start.js",
+    "start": "node ./start.js",
     "dev": "webpack-dev-server --config webpack.config.js --color --watch --hot --progress",
-    "ant": "webpack --config webpack.config.js",
-    "build": "node ./scripts/build.js"
+    "ant": "node ./build.js",
+    "build": "webpack --config webpack.config.js",
+    "clean": "rimraf ./*/dist/*",
+    "prebuild": "npm run clean"
   },
   "author": "",
   "license": "ISC",
