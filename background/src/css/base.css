@@ -19,6 +19,17 @@ a:hover{
     position: relative;
 }
 
+.w-half{
+	width: 49%;
+}
+
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+
 .icons {
     background: url(../images/icons.png) no-repeat;
     background-size: $ico-bg-w/2 $ico-bg-h/2;
@@ -34,6 +45,45 @@ a:hover{
     &.ico-nav-4{
     	background-position: 0 -120px; 
     }
+    &.ico-play{
+    	position: absolute;
+    	left: 50%;
+    	top: 50%;
+    	margin: -20px 0 0 -20px;
+    	width: 40px;
+    	height: 40px;
+    	background-position: 0 -240px;
+    }
+}
+.btn-switch{
+	position: relative;
+	height: 25px;
+	border:1px solid #e5e5e5;
+	display: inline-block;
+	width: 53px;
+	background-color: #fff;
+	border-radius: 25px;
+	& i{
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		border:1px solid #e5e5e5;
+		border-radius: 25px;
+		box-sizing: border-box;
+		background-color: #fff;
+		left: 0px;
+		top: 0px;
+		box-shadow: 0 0 5px #e5e5e5;
+	}
+	&.open{
+		background: #1fb922;
+		& i{
+			right: 0;
+			left: auto;
+			box-shadow: none;
+			border-color: #1fb922;
+		}
+	}
 }
 
 .h100{
@@ -184,13 +234,16 @@ a:hover{
 			padding: 10px 18px;
 			background: #fff;
 			margin-bottom: 18px;
+			clear: both;
 			& h2,& form{
 				font-size: 16px;
 				line-height: 47px;
 				border-bottom: 1px solid #dfdfdf;
 				color: #666666;
 				margin-bottom: 18px;
-				
+				&.nm{
+					margin-bottom: 0;
+				}
 			}
 			& form{
 				padding-bottom: 10px;
@@ -202,7 +255,9 @@ a:hover{
 					line-height: 34px;
 					box-sizing: border-box;
     				vertical-align: middle;
-    				margin-right: 10px;
+    				border-radius: 5px;
+    				border: 1px solid rgb(169, 169, 169);
+    				margin: 0 5px;
     				&[type="text"]{
     					width: 85px;
     				}
@@ -210,9 +265,11 @@ a:hover{
     					background: #fff;
     					color: #49a0ff;
     					outline: none;
-    					border: 1px solid rgb(169, 169, 169);
     				}
 				}
+			}
+			.box{
+				position: relative;
 			}
 			& .ul1{
 				display: flex;
@@ -338,6 +395,34 @@ a:hover{
 					}
 				}
 			}
+		}
+	}
+}
+
+.paging{
+	height: 20px;
+	text-align: center;
+	padding: 0 0 10px;
+	clear: both;
+	& *{
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 3px;
+	}
+	& em{
+		color: $bcolor;
+	}
+	& a{
+		background:url(../images/page.png) no-repeat;
+		width: 20px;
+		height: 20px;
+		background-size: auto 45px;
+
+		&.next{
+			background-position: top right;
+		}
+		&:hover{
+			background-position-y:bottom;
 		}
 	}
 }
