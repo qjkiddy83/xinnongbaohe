@@ -1,8 +1,16 @@
 import '../css/reset.css';
 import '../css/base.css';
-let $ = require('jquery');
-$('.nav,.right-cont').css('min-height',$(window).height());
+import '../js/switch.js';
 
-$(window).on('resize',function(){
-	$('.nav,.right-cont').css('min-height',$(window).height());
+let $ = require('jquery');
+$('.nav,.right-cont').css('min-height', $(window).height());
+
+$(window).on('resize', function() {
+    $('.nav,.right-cont').css('min-height', $(window).height());
+})
+
+$('.msg').on('click','.ico-close',function(){
+	$(this).parent().fadeOut(function(){
+		$(this).remove();
+	});
 })
