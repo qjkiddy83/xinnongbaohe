@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
 let { spawn, exec } = require('child_process');
-let root = './' + process.env.WEBROOT + '/dist';
-let free = exec('npm run ant');
 
 process.env.WEBROOT = process.argv.pop();
+
+let free = exec('npm run ant');
+
+let root = './' + process.env.WEBROOT + '/dist';
 
 exec('rm -rf ' + root);//清除原打包文件夹
 

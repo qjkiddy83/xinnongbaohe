@@ -126,7 +126,13 @@ function getRules() {
         ]
     }, {
         test: /\.(htm|html)$/i,
-        loader: 'html-loader'
+        use: [{
+            loader: 'html-loader',
+            options: {
+              attrs: ['img:src',':data-source'],
+              minimize: false
+            }
+        }]
     }];
     return isDev ? [cfg_eslint, ...rules] : rules;
 }

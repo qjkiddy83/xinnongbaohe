@@ -1,0 +1,6 @@
+function Layer() {
+
+    let cfgs = {
+
+    }
+}

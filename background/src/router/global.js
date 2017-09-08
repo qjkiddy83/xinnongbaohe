@@ -14,3 +14,9 @@ $('.msg').on('click','.ico-close',function(){
 		$(this).remove();
 	});
 })
+
+$(document).on('click','.layer .ico-close',function(){
+	$(this).closest('.layer').fadeOut(function(){
+		$(this).hide();
+	});
+})
