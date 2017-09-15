@@ -11,8 +11,6 @@
 	}
 	& .main{
 		overflow: hidden;
-		width: 1024px;
-		margin: 0 auto;
 		& .pannel{
 			& .cam-list{
 				position: relative;

@@ -2,8 +2,17 @@
 
 .banner{
 	padding: 20px 0;
+	position: relative;
 	& img{
 		display: block;
+	}
+	& span{
+		font-size: 30px;
+		color: #666;
+		position: absolute;
+		left: 21px;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 }
 .content{

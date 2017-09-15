@@ -1,0 +1,149 @@
+h1{
+	line-height: 83px;
+	text-align: center;
+	font-size: 28px;
+	color: #333;
+}
+.block{
+	margin-top: 70px;
+	& .block-title{
+		line-height: 50px;
+		color: #2b79ff;
+		font-size: 28px;
+		text-align: center;
+		border-bottom: 1px solid #efefef;
+		margin-bottom: 76px;
+		position: relative;
+		& span{
+			position: absolute;
+			width: 100%;
+			color: #999999;
+			font-size: 16px;
+			line-height: 37px;
+			left: 0;
+			bottom: -37px;
+			font-weight: normal;
+		}
+	}
+	&.environment{
+		& .list{
+			overflow: hidden;
+			& dl{
+				width: 180px;
+				background-color: #f8f9fa;
+				display: block;
+				float: left;
+				text-align: center;
+				margin-right: 25px;
+				padding: 25px 0 20px;
+				border-radius: 5px;
+				&:last-child{
+					margin-right:0;
+				}
+				& dt{
+					font-size: 35px;
+					line-height: 60px;
+				}
+			}
+		}
+	}
+	&.introduction{
+		& .intro-cont{
+			overflow: hidden;
+			padding: 21px 27px;
+			background-color: #f8f9fa;
+			border-radius: 5px;
+			& img{
+				width: 310px;
+				height: 230px;
+				float: left;
+			}
+			& .txt{
+				height: 121px;
+				overflow: auto;
+				width: 575px;
+				float: right;
+				margin-top: 50px;
+				line-height: 25px;
+				color: #777;
+			}
+		}
+	}
+	&.products {
+	    & ul {
+	        overflow: hidden;
+	        & li {
+	            width: 235px;
+	            float: left;
+	            margin: 0 (1000-235*4)/3 +px 20px 0;
+	            border-radius: 5px;
+	            background-color: #f7f7f7;
+	            font-size: 16px;
+	            &:nth-child(4n) {
+	                margin-right: 0;
+	            }
+	            & a {
+	                display: block;
+	                color: #333;
+	                & img {
+	                    display: block;
+	                }
+	                & p {
+	                    text-align: center;
+	                    height: 56px;
+	                    line-height: 50px;
+	                }
+	            }
+	        }
+	    }
+	}
+	&.information{
+		margin-bottom: 70px;
+		& .icon{
+			width: 31px;
+			height: 31px;
+		}
+		& ul{
+			display: flex;
+		}
+		& li{
+			display: inline-block;
+			padding: 33px 24px;
+			background: #f8f9fa;
+			margin-right: 20px;
+			flex: 1;
+			box-sizing: border-box;
+			&>*{
+				vertical-align: middle;
+				margin-right: 15px;
+			}
+			&:last-child{
+				flex: 2;
+			}
+		}
+	}
+
+}
+.icon{
+	background:url(../images/farmicon.png) no-repeat;
+	background-size: 250px 250px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	$k:0;
+	@each $icon in temperature, humidity, light, speed, direction{
+	  &.icon-#{$icon} {
+	    background-position: (0) (-25*$k+px);
+	  }
+	  $k: $k + 1;
+	}
+	&.icon-ct1{
+		background-position: -36px 0;
+	}
+	&.icon-ct2{
+		background-position: -36px -49px;
+	}
+	&.icon-ct3{
+		background-position: -36px -99px;
+	}
+}

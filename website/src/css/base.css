@@ -20,12 +20,16 @@ a:hover{
 }
 
 .header {
-    padding-top: 10px;
+    padding-top: 18px;
     height: 50px;
     border-bottom: 1px solid #f2f2f2;
     background-color: #fff;
     & .logo {
         float: left;
+        & img{
+        	display: block;
+        	height: 32px;
+        }
     }
     & .nav {
         float: right;
@@ -185,3 +189,4 @@ a:hover{
 		}
 	}
 }
+

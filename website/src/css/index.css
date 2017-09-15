@@ -2,26 +2,37 @@
 @import './swiper.css';
 
 .swiper-pagination-bullet {
-    background: url(../images/bullet.png) no-repeat right center;
-    background-size: 36px 14px;
-    width: 11px;
-    height: 11px;
+    background-color: #525352;
+    border-radius: 7px;
+    width: 7px;
+    height: 7px;
     opacity: 1;
+    vertical-align: middle;
 }
 
 .swiper-pagination-bullet-active {
-    background-position: left center;
+    width: 11px;
+    border-radius: 11px;
+    background: #fff;
+    height: 11px;
+    box-shadow: 0 0 0 2px #000;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 6px;
 }
+.swiper-container{
+    margin-top: 10px;
+    & img{
+        display: block;
+    }
+}
 
 .block-title {
-    margin: 67px 0 45px 0;
+    margin: 50px 0 45px 0;
     line-height: 78px;
     font-weight: normal;
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
 }
 
@@ -69,6 +80,9 @@
         width: 932px;
         display: block;
         margin: 0 auto;
+    }
+    & .block-title{
+        margin-top: 30px;
     }
 }
 

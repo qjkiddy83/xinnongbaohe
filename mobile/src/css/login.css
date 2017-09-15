@@ -1,0 +1,12 @@
+@import './vars';
+
+.logo{
+    width: 4.213333rem;
+    margin: 1.266667rem auto 1rem;
+    img{
+        display: block;
+    }
+}
+.button{
+	margin-top: 0.933333rem;
+}
