@@ -284,6 +284,9 @@ header{
 	    background-position: (-25px) (-25*$i+px);
 	  }
 	}
+	&.ico-cam{
+		background-position: -25px -100px;
+	}
 }
 .btn{
 	&.btn-switch{
@@ -393,5 +396,25 @@ header{
 		&.date{
 			line-height: 1.066667rem;
 		}
+	}
+}
+.loading-more{
+	font-size: 0.426667rem;
+	color: #666;
+	line-height: 0.6rem;
+	text-align: center;
+	margin: 1rem auto;
+	background: transparent;
+	& i{
+		background-image: url(../images/loading.gif);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 0.6rem 0.6rem;
+		width: 0.6rem;
+		height: 0.6rem;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 0.266667rem;
+		background-color: transparent;
 	}
 }
