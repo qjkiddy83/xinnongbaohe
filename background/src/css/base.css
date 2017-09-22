@@ -83,6 +83,9 @@ a:hover{
 	&.ico-home{
 		background-position: -40px 0;
 	}
+	&.ico-msg{
+		background-position: -131px -89px;
+	}
 	&.ico-pwd{
 		background-position: -40px -40px;
 	}
@@ -241,7 +244,20 @@ a:hover{
 				& .icons{
 					width: 18px;
 					height: 18px;
-					
+					position: relative;
+					i{
+						position: absolute;
+						background-color: #fb253a;
+						width: 20px;
+						height: 20px;
+						text-align: center;
+						line-height: 20px;
+						border-radius: 20px;
+						font-size: 8px;
+						color: #fff;
+						top: -10px;
+						right: -18px;
+					}
 				}
 			}
 		}
@@ -724,9 +740,12 @@ a:hover{
 				}
 			}
 			& .ul6{
+				&.mt10{
+					margin-top: 10px;
+				}
 				& dl{
 					border-bottom: 1px solid #f3f3f3;
-					padding: 20px 0 16px;
+					padding: 20px 0 10px;
 					&:last-child{
 						border-bottom:none;
 					}
@@ -736,6 +755,9 @@ a:hover{
 					& dt{
 						width: 85px;
 						float: left;
+						img{
+							display: block;
+						}
 					}
 					& dd{
 						margin-left: 100px;
@@ -755,6 +777,9 @@ a:hover{
 						}
 						& label{
 							color: #2e3254;
+						}
+						&.ml0{
+							margin-left: 0;
 						}
 					}
 				}
@@ -856,7 +881,7 @@ a:hover{
 			}
 			& .form{
 				padding-top: 20px;
-				& label{
+				& label,& .label{
 					display: block;
 					&>*{
 						display: inline-block;

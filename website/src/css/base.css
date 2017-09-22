@@ -54,6 +54,7 @@ a:hover{
     text-align: center;
     border-top: 1px solid #e4e4e4;
     background-color: #fff;
+    padding-bottom: 15px;
     & ul {
         padding: 35px 0 20px 0;
         & li {

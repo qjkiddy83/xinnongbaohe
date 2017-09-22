@@ -48,6 +48,7 @@
 		& ul{
 			background-color: #fff;
 			padding: 20px 22px;
+			min-height: 277px;
 			box-sizing: border-box;
 		}
 		& li{

@@ -1,0 +1,172 @@
+body{
+	padding-bottom: 1rem !important;
+	background-color: #fff !important;
+}
+section>*{
+	background-color: #fff;
+}
+.h1{
+	font-size: 0.453333rem;
+	line-height: 1.333333rem;
+	text-align: center;
+}
+.banner{
+	background-color: #fff;
+	text-align: center;
+	img{
+		display: block;
+	}
+}
+.li-1{
+	overflow: hidden;
+	padding-bottom: 0.3rem;
+	dl{
+		margin:((10-4.56*2)/3+rem) 0 0 ((10-4.56*2)/3+rem);
+		width: 4.56rem;
+		float: left;
+		dt{
+			margin-bottom: .2rem;
+			img{
+				display: block;
+				border-radius: 5px;
+			}
+		}
+		dd{
+			font-size: 0.346667rem;
+			text-align: center;
+			color: #666;
+			line-height: 0.613333rem;
+			&:last-child{
+				color:#333;
+			}
+		}
+	}
+}
+.m-wrapper{
+	h2{
+		font-size: 0.426667rem;
+		color: #2b79ff;
+		text-align: center;
+		margin-top: 0.666667rem;
+		line-height: 0.8rem;
+		p{
+			font-size: 0.32rem;
+			color: #999;
+			line-height: 0.533333rem;
+		}
+	}
+	.environment{
+		overflow: hidden;
+		text-align: center;
+		margin-top: 0.4rem;
+		dl{
+			display: inline-block;
+			width: 2.813333rem;
+			background-color: #f8f9fa;
+			text-align: center;
+			padding: 0.4rem 0;
+			margin:0 (10-2.813333*3)/4+rem (10-2.813333*3)/4+rem 0;
+			border-radius: 5px;
+			dt{
+				color: #333;
+				font-size: 0.546667rem;
+			}
+			dd{
+				color: #2e3254;
+				font-size: 0.253333rem;
+			}
+			&:first-child{
+				margin-left: (10-2.813333*3)/4+rem;
+			}
+		}
+	}
+	&.introduction{
+		p{
+			font-size: 0.32rem;
+			color: #666;
+			line-height: 0.56rem;
+			padding: 0.266667rem 0.32rem 0;
+		}
+		h2{
+			margin-top: 0.4rem;
+			p{
+				padding-top: 0;
+			}
+		}
+		.more{
+			width: 2.746667rem;
+			font-size: 0.293333rem;
+			color: #777;
+			display: block;
+			margin: 0.533333rem auto 0;
+			border: 1px solid #777;
+			border-radius: 0.626667rem;
+			line-height: 0.626667rem;
+			text-align: center;
+		}
+	}
+	&.contact{
+		h2{
+			margin-top: 0.4rem;
+		}
+		&>section{
+			display: flex;
+			padding: 0.4rem 0 0;
+			dl{
+				flex: 5;
+				background-color: #f7f7f7;
+				border-radius: 5px;
+				text-align: center;
+				font-size: 0.4rem;
+				margin-left: 0.426667rem;
+				color: #666;
+				&:last-child{
+					margin-right:0.426667rem;
+					flex: 6;
+				}
+				a{
+					color: #666;
+				}
+				dt{
+					margin: 0.466667rem 0;
+				}
+				dd{
+					padding-bottom: 0.466667rem;
+				}
+			}
+			.icon{
+				width: 31px;
+	    		height: 31px;
+			}
+		}
+	}
+	.img-wrap{
+		padding: 0.4rem 0 0;
+		img{
+			display: block;
+		}
+	}
+}
+.icon{
+	background:url(../images/farmicon.png) no-repeat;
+	background-size: 250px 250px;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	$k:0;
+	@each $icon in temperature, humidity, light, speed, direction{
+	  &.icon-#{$icon} {
+	    background-position: (0) (-25*$k+px);
+	  }
+	  $k: $k + 1;
+	}
+	&.icon-ct1{
+		background-position: -36px 0;
+	}
+	&.icon-ct2{
+		background-position: -36px -49px;
+	}
+	&.icon-ct3{
+		background-position: -36px -99px;
+	}
+}

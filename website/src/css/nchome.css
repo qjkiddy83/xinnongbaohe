@@ -14,6 +14,7 @@ h1{
 		border-bottom: 1px solid #efefef;
 		margin-bottom: 76px;
 		position: relative;
+		font-weight: normal;
 		& span{
 			position: absolute;
 			width: 100%;
@@ -42,6 +43,7 @@ h1{
 				}
 				& dt{
 					font-size: 35px;
+					font-family: cursive;
 					line-height: 60px;
 				}
 			}
@@ -119,6 +121,7 @@ h1{
 			}
 			&:last-child{
 				flex: 2;
+				margin-right: 0;
 			}
 		}
 	}

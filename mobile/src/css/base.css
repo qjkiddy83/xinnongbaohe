@@ -19,10 +19,39 @@ a:focus,a:link,a:visited,a:hover,a:active{
 .txt-m{
 	text-align: center;
 }
+header{
+	height: 1.173333rem;
+	line-height: 1.173333rem;
+	background-color: #3c77ff;
+	color: #fff;
+	text-align: center;
+	font-size: 0.453333rem;
+	position: relative;
+	a{
+		position: absolute;
+		left: 0.24rem;
+		color: #fff;
+		display: block;
+		&>*{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		&:before{
+			content:'';
+			display: inline-block;
+			width: 0.266667rem;
+			height: 0.466667rem;
+			background:url(../images/hback.png) no-repeat;
+			vertical-align: middle;
+			background-size: contain;
+			margin-right: 0.133333rem;
+		}
+	}
+}
 
 %form-item-base {
     position: relative;
-    height: 1.213333rem;
+    height: 1.35rem;
     width: 100%;
     display: flex;
     font-size: 0.453333rem;
@@ -58,6 +87,7 @@ a:focus,a:link,a:visited,a:hover,a:active{
         	position: absolute;
         	right: 0;
         	top: 0;
+        	bottom: 0;
         	margin-right: 0.426667rem;
         	color: #c7c7cc;
         	& span{
@@ -71,16 +101,17 @@ a:focus,a:link,a:visited,a:hover,a:active{
         		}
         	}
         	& b{
-        		width: 0.533333rem;
-        		height: 0.533333rem;
+        		width: 0.65rem;
+        		height: 0.65rem;
         		border-radius: 50%;
         		background-color: #f62727;
         		display: inline-block;
         		color: #fff;
         		vertical-align: middle;
-        		line-height: 0.533333rem;
+        		line-height: 0.65rem;
         		text-align: center;
         		font-weight: normal;
+        		font-size: 12px;
         	}
         	& i{
         		margin-left: 0.2rem;
@@ -254,6 +285,49 @@ a:focus,a:link,a:visited,a:hover,a:active{
 	  }
 	}
 }
+.btn{
+	&.btn-switch{
+		width: 1.44rem;
+		height: 0.8rem;
+		position: relative;
+		border:1px solid #e5e5e5;
+		display: inline-block;
+		background-color: #fff;
+		border-radius: 0.8rem;
+		vertical-align: middle;
+		& i{
+			position: absolute;
+			width: 0.8rem;
+			height: 0.8rem;
+			border:1px solid #e5e5e5;
+			border-radius: 0.8rem;
+			box-sizing: border-box;
+			background-color: #fff;
+			left: 0px;
+			top: 0px;
+			box-shadow: 0 0 5px #e5e5e5;
+			margin-left: 0;
+		}
+		&.open{
+			background-color: #1fb922;
+			& i{
+				right: 0;
+				left: auto;
+				box-shadow: none;
+				border-color: #1fb922;
+			}
+		}
+		&.loading{
+			& i{
+				background-image: url(../images/loading.gif);
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 0.6rem 0.6rem;
+			}
+		}
+	}
+}
+
 
 .bbar{
 	position: fixed;
