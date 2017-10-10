@@ -51,6 +51,15 @@
         	&.error{
             	color: #f05d5d;
             }
+            em{
+            	width: 10px;
+            	height: 10px;
+            	background-color: #fb253a;
+            	border-radius: 50%;
+            	display: inline-block;
+            	vertical-align: middle;
+            	margin-left: 5px;
+            }
         }
         & .time {
             font-size: 12px;

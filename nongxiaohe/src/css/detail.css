@@ -1,0 +1,29 @@
+.article{
+	background: #fff;
+	padding: 50px 50px 25px 50px;
+	h1{
+		font-size: 28px;
+		font-weight: normal;
+		margin-bottom: 25px;
+	}
+	.banner{
+		padding-bottom: 30px;
+		margin-bottom: 25px;
+		border-bottom: 1px solid #eee;
+		img{
+			display: block;
+		}
+	}
+	p{
+		margin-bottom: 25px;
+		text-indent: 2em;
+	}
+	.img{
+		margin-bottom: 25px;
+		text-align: center;
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}

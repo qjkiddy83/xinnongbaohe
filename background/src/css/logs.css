@@ -11,6 +11,17 @@
             margin-bottom: 10px;
             color: #2e3254;
         }
+        & h3{
+            em{
+                width: 10px;
+                height: 10px;
+                background-color: #fb253a;
+                border-radius: 50%;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 5px;
+            }
+        }
         & .time {
             font-size: 12px;
             margin-bottom: 0;

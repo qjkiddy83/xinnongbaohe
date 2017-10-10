@@ -659,6 +659,7 @@ a:hover{
 					}
 					& .tit{
 						line-height: 24px;
+						height: 48px;
 						color: #2e3254;
 						font-size: 14px;
 					}

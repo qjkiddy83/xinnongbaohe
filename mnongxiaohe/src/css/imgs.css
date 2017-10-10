@@ -1,0 +1,48 @@
+body{
+	/*padding-bottom: 1rem !important;*/
+}
+section>*{
+	background-color: #fff;
+}
+.h1{
+	font-size: 0.453333rem;
+	line-height: 1.333333rem;
+	background-color: #efeff4;
+	text-align: center;
+}
+.banner{
+	background-color: #fff;
+	text-align: center;
+	img{
+		display: block;
+	}
+}
+
+.m-wrapper{
+	h2{
+		font-size: 0.426667rem;
+		text-align: center;
+		line-height: 1.52rem;
+		color: #666666;
+		&.tleft{
+			text-align: left;
+			text-indent: 0.32rem;
+		}
+	}
+	&.charts{
+		width: 9.2rem;
+		margin: 0.426667rem auto 0;
+		.img-wrap{
+			margin: 0 auto 0.32rem;
+			img{
+				display: block;
+			}
+			p{
+				text-align: center;
+				font-size: 0.373333rem;
+				color: #666;
+				margin-top: 0.32rem;
+			}
+		}
+	}
+}
