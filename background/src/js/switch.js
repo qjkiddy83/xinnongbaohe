@@ -14,6 +14,9 @@ let $ = require('jquery');
 // }
 
 $(document).on('click','.btn-switch',function(){
+	if($(this).hasClass('disabled')){
+		return false;
+	}
 	$(this).addClass('loading')
 	if($(this).hasClass('open')){
 		setTimeout(function(){

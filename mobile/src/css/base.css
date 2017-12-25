@@ -328,6 +328,14 @@ header{
 				background-size: 0.6rem 0.6rem;
 			}
 		}
+		&.disabled{
+			background: #dfdfdf;
+			& i{
+				box-shadow: none;
+				border-color: #dfdfdf;
+				background-color: #f2f2f2;
+			}
+		}
 	}
 }
 
