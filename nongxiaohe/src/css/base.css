@@ -25,24 +25,28 @@ a:hover{
 .header {
     padding: 26px 0;
     & .logo {
-    	display: block;
     	text-align: center;
-    	padding-bottom: 30px;
-    	p{
-    		padding-top: 15px;
-    		font-size: 23px;
-    		color: #000;
-    		span{
-    			display: block;
-    			font-size: 12px;
-    		}
+    	a{
+    		display: inline-block;
+    		img{
+	        	display: block;
+	        	height: 82px;
+	        	margin: 0 auto;
+	        }
     	}
-        & img{
-        	display: block;
-        	height: 82px;
-        	margin: 0 auto;
-        }
+        
     }
+    .logotxt{
+		padding-top: 15px;
+		font-size: 23px;
+		color: #000;
+		text-align: center;
+    	padding-bottom: 30px;
+		span{
+			display: block;
+			font-size: 12px;
+		}
+	}
     & .nav {
     	text-align: center;
         & li {
@@ -201,5 +205,10 @@ a:hover{
 			background-position-y:bottom;
 		}
 	}
+}
+
+
+body{
+	
 }
 

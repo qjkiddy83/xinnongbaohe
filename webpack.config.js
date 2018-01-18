@@ -1,12 +1,14 @@
 var webpack = require('webpack'),
     path = require('path'),
+    WebpackMd5Hash = require('webpack-md5-hash'),
     fs = require('fs'),
     pkg = require('./package.json'),
     webroot = process.env.WEBROOT,
     merge = require('merge'),
-    isDev = process.env.npm_lifecycle_event === "start",
+    isDev = process.env.npm_lifecycle_event === "dev",
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
+    hash = isDev?'[hash:8]':'[chunkhash:8]',
     _chunks = [],
     oConfig = getOEntry(),
     cfg_eslint = { //eslint配置
@@ -19,8 +21,9 @@ var webpack = require('webpack'),
         entry: oConfig.oEntry,
         output: {
             path: path.join(__dirname, webroot, 'dist'),
-            filename: 'js/[name].js'
+            filename: `js/[name].js?v=${hash}`
         },
+        devtool: '#source-map',
         module: {
             rules: getRules()
         }
@@ -31,7 +34,8 @@ var webpack = require('webpack'),
             chunks: _chunks, //提取哪些模块共有的部分
             minChunks: Infinity // 提取至少2个模块共有的部分
         }),
-        new ExtractTextPlugin({ filename: 'css/[name].css' }),
+        new ExtractTextPlugin({ filename: `css/[name].css?v=[contenthash:8]` }),
+        new WebpackMd5Hash()
     ];
 
 //生成入口对象
@@ -113,13 +117,13 @@ function getRules() {
             }]
         })
     }, {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|eot|woff2|woff|ttf|svg)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
                 limit: 8192,
-                name: 'images/[hash:8].[name].[ext]',
+                name: `images/[name].[ext]?v=[hash:8]`,
                 publicPath : '../'
             }  
           }

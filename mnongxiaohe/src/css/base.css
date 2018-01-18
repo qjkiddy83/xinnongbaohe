@@ -401,6 +401,9 @@ header{
 			color: #333;
 			display: block;
 			line-height: 1.333333rem;
+			&:hover,&:active,&:link{
+				text-decoration:none;
+			}
 		}
 		&.cur a{
 			color: #3fc698;
